@@ -1,0 +1,202 @@
+import {
+  FullScreenCode,
+  Head,
+  Image,
+  SplitRight,
+  themes,
+  Steps,
+} from "mdx-deck";
+import { CodeSurfer } from "code-surfer";
+import { vsDark } from "@code-surfer/themes";
+
+export const theme = {
+  ...themes.dark,
+  styles: {
+    ul: {
+      maxWidth: "80vw",
+    },
+    li: {
+      fontSize: "1.4em",
+      lineHeight: "1.5em",
+      marginBottom: ".6em",
+    },
+    p: {
+      fontSize: "1.3em",
+    },
+    a: {
+      fontSize: ".8em",
+      color: "#fff",
+    },
+    blockquote: {
+      width: "60vw",
+      fontSize: "1.5em",
+      fontStyle: "italic",
+      // "&::before": {
+      //   fontSize: "3em",
+      //   content: "'\"'",
+      //   marginBottom: 0,
+      //   padding: 0,
+      // },
+      p: {
+        fontSize: "1em",
+      },
+    },
+  },
+};
+
+import storyBookSite from "./images/storybook-site.png";
+import storyBookSupports from "./images/storybook-supports.png";
+
+<Head>
+  <title>Storybook Streamlines UI Component Development</title>
+</Head>
+
+---
+
+# Storybook Streamlines
+
+# UI Component Development
+
+##
+
+##
+
+## Steve Schwarz
+
+## [@steveaschwarz](https://twitter.com/steveaschwarz)
+
+---
+
+## Me
+
+- Software developer since 1991
+
+- Factory automation and futures/options trading product development: C/C++
+
+- Full stack web product dev: Python, JavaScript, Angular, VueJS
+
+- Personal dog agility and tech projects:
+
+[agilitynerd.com](https://www.agilitynerd.com) [tech.agilitynerd.com](https://tech.agilitynerd.com) [googility.com](https://googility.com) [agilitycourses.com](https://agilitycourses.com) [agilitycoursemaster.com](https://agilitycoursemaster.com)
+
+---
+
+# Just an Overview!
+
+<Steps>
+
+
+- Introduce Storybook
+- Storybook in action with VueJS
+
+</Steps>
+
+
+---
+
+<Image
+  src={storyBookSite}
+  size="contain"
+  style={{ width: "80vw", margin: "0" }}
+></Image>
+
+# https://storybook.js.org/
+
+---
+
+> Storybook runs outside of your app. So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
+
+https://github.com/storybookjs/storybook
+
+---
+
+> Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+
+https://github.com/storybookjs/storybook
+
+---
+
+# Supports Most JS Frameworks
+
+<Image
+  src={storyBookSupports}
+  size="contain"
+  style={{ width: "80vw", margin: "0" }}
+></Image>
+
+---
+
+# Batteries Included
+
+- Visual, interactive browsing of components/states
+- Controls to change/inspect components
+- Generate documentation along with components
+- Compose Pages of components
+- Drive unit testing
+- Drive snapshot testing
+- Drive visual regression testing
+- Drive E2E testing
+
+---
+
+# How?
+
+It uses... Stories
+
+Stories
+
+- [Great How-to Site](https://www.learnstorybook.com/)
+
+---
+
+# Installs into existing projects
+
+`npx sb init`
+
+# Run it
+
+`yarn storybook`
+
+---
+
+# Unit Tests
+
+Use story configurations within unit tests
+
+---
+
+# Snapshot Testing
+
+Can use Jest snapshots within unit tests
+
+Use storyshots plugin to generate snapshots for all Stories
+
+---
+
+# Visual Regession Tests
+
+---
+
+# Examples
+
+https://bbc.github.io/psammead/?path=/story/components-brand--with-script-link
+
+---
+
+# Thanks!
+
+## Me
+
+- @steveaschwarz
+
+## Presentation
+
+- https://github.com/saschwarz/storybook-lightning
+- https://storybook-demo.netlify.com/#1
+
+## Slides Built Using:
+
+- https://github.com/jxnblk/mdx-deck
+- https://github.com/pomber/code-surfer
+
+---
