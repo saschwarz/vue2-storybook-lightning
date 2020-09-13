@@ -41,6 +41,11 @@ export const theme = {
         fontSize: "1em",
       },
     },
+    CodeSurfer: {
+      title: {
+        fontSize: "1.5em",
+      },
+    },
   },
 };
 
@@ -67,32 +72,25 @@ import storyBookSupports from "./images/storybook-supports.png";
 
 ---
 
-## Me
+- Developer since 1991
 
-- Software developer since 1991
-
-- Factory automation and futures/options trading product development: C/C++
-
-- Full stack web product dev: Python, JavaScript, Angular, VueJS
+- Full stack web dev:
+  Python (Django, Flask), JavaScript, Angular, VueJS, Ionic
 
 - Personal dog agility and tech projects:
-
-[agilitynerd.com](https://www.agilitynerd.com) [tech.agilitynerd.com](https://tech.agilitynerd.com) [googility.com](https://googility.com) [agilitycourses.com](https://agilitycourses.com) [agilitycoursemaster.com](https://agilitycoursemaster.com)
+  [agilitynerd.com](https://www.agilitynerd.com) [tech.agilitynerd.com](https://tech.agilitynerd.com) [googility.com](https://googility.com) [agilitycourses.com](https://agilitycourses.com) [agilitycoursemaster.com](https://agilitycoursemaster.com)
 
 ---
 
-# Just an Overview!
-
-<Steps>
-
+# Agenda
 
 - Introduce Storybook
+
 - Storybook in action with VueJS
 
-</Steps>
-
-
 ---
+
+## https://storybook.js.org/
 
 <Image
   src={storyBookSite}
@@ -100,15 +98,15 @@ import storyBookSupports from "./images/storybook-supports.png";
   style={{ width: "80vw", margin: "0" }}
 ></Image>
 
-# https://storybook.js.org/
-
 ---
 
+<!--
 > Storybook runs outside of your app. So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
 https://github.com/storybookjs/storybook
 
----
+--- -->
+
 
 > Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
@@ -116,7 +114,7 @@ https://github.com/storybookjs/storybook
 
 ---
 
-# Supports Most JS Frameworks
+## Storybook for Most Frameworks
 
 <Image
   src={storyBookSupports}
@@ -131,31 +129,80 @@ https://github.com/storybookjs/storybook
 - Visual, interactive browsing of components/states
 - Controls to change/inspect components
 - Generate documentation along with components
-- Compose Pages of components
-- Drive unit testing
-- Drive snapshot testing
-- Drive visual regression testing
-- Drive E2E testing
+- Compose Pages/layouts of components
 
 ---
 
-# How?
+# Stories Can Drive Other Tests
 
-It uses... Stories
-
-Stories
-
-- [Great How-to Site](https://www.learnstorybook.com/)
+- Unit
+- Snapshot
+- Visual Regression
+- End to End
 
 ---
 
-# Installs into existing projects
+## Installs into existing projects
 
 `npx sb init`
 
-# Run it
+## Run it
 
 `yarn storybook`
+
+---
+
+<CodeSurfer theme={vsDark}>
+
+
+```js title="A Story Defines Component State" showNumbers
+import Button from "@/components/Button.vue";
+
+export default {
+  title: "Example/Button",
+  component: Button,
+  argTypes: {
+    backgroundColor: { control: "color" },
+    size: {
+      control: { type: "select", options: ["small", "medium", "large"] },
+    },
+  },
+};
+
+// template mapping args to props
+const Template = (args) => <Button {...args} />;
+
+// Each story reuses the template with new args
+
+export const Primary = Template.bind({});
+Primary.args = { primary: true, label: "Button" };
+
+export const Secondary = Template.bind({});
+Secondary.args = { label: "Button" };
+```
+
+```diff 1 subtitle="Import component under test"
+
+```
+
+```diff 3:12 subtitle="Setup story"
+
+```
+
+```diff 14:15 subtitle="Define render template"
+
+```
+
+```diff 17:20 subtitle="Primary Story"
+
+```
+
+```diff 22:23 subtitle="Secondary Story"
+
+```
+
+</CodeSurfer>
+
 
 ---
 
@@ -167,9 +214,23 @@ Use story configurations within unit tests
 
 # Snapshot Testing
 
-Can use Jest snapshots within unit tests
+Use Jest snapshots within unit tests
 
-Use storyshots plugin to generate snapshots for all Stories
+Use `storyshots` plugin to generate snapshots for _all Stories_
+
+## https://storybook.js.org/docs/vue/workflows/snapshot-testing
+
+---
+
+# Accessibility Testing
+
+`storybook-addon-a11y` uses [axe](https://github.com/dequelabs/axe-core)
+
+## https://github.com/storybookjs/storybook/tree/master/addons/a11y
+
+Could also add `axe` to your Jest tests:
+
+https://github.com/nickcolley/jest-axe
 
 ---
 
@@ -177,26 +238,30 @@ Use storyshots plugin to generate snapshots for all Stories
 
 ---
 
-# Examples
+# Resources
 
-https://bbc.github.io/psammead/?path=/story/components-brand--with-script-link
+## Learning Storybook
+
+https://www.learnstorybook.com/intro-to-storybook/
+
+https://www.learnstorybook.com/design-systems-for-developers
+
+## Large Storybook Projects
+
+https://react.carbondesignsystem.com/?path=/story/accordion--accordion
+
+https://bbc.github.io/psammead
+
+https://storybook.js.org/docs/react/get-started/examples
 
 ---
 
 # Thanks!
 
-## Me
+@steveaschwarz
 
-- @steveaschwarz
+Code: https://github.com/saschwarz/vue2-storybook
 
-## Presentation
-
-- https://github.com/saschwarz/storybook-lightning
-- https://storybook-demo.netlify.com/#1
-
-## Slides Built Using:
-
-- https://github.com/jxnblk/mdx-deck
-- https://github.com/pomber/code-surfer
+Slides: https://github.com/saschwarz/vue2-storybook-lightning
 
 ---
