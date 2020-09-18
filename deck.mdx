@@ -71,7 +71,11 @@ import storyBookSupports from "./images/storybook-supports.png";
 
 ## [@steveaschwarz](https://twitter.com/steveaschwarz)
 
+<!--
+
 ---
+
+## Steve Schwarz
 
 - Developer since 1991
 
@@ -81,13 +85,8 @@ import storyBookSupports from "./images/storybook-supports.png";
 - Personal dog agility and tech projects:
   [agilitynerd.com](https://www.agilitynerd.com) [tech.agilitynerd.com](https://tech.agilitynerd.com) [googility.com](https://googility.com) [agilitycourses.com](https://agilitycourses.com) [agilitycoursemaster.com](https://agilitycoursemaster.com)
 
----
+-->
 
-# Agenda
-
-- Introduce Storybook
-
-- Storybook in action with VueJS
 
 ---
 
@@ -100,14 +99,6 @@ import storyBookSupports from "./images/storybook-supports.png";
 ></Image>
 
 ---
-
-<!--
-> Storybook runs outside of your app. So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
-
-https://github.com/storybookjs/storybook
-
---- -->
-
 
 > Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
@@ -125,31 +116,48 @@ https://github.com/storybookjs/storybook
 
 ---
 
-# Batteries Included
+# UI Development "Environment"
 
 - Visual, interactive browsing of components/states
 - Controls to change/inspect components
-- Generate documentation along with components
+- Generates component documentation
 - Compose Pages/layouts of components
+- Hot reload of components/stories
 
 ---
 
-# Stories Can Drive Other Tests
-
-- Unit
-- Snapshot
-- Visual Regression
-- End to End
-
----
-
-## Installs into existing projects
+## Safely Installs Into Projects
 
 `npx sb init`
 
-## Run it
+<Notes>
+
+
+- Show default Vue project layout
+- Update to 01 tag
+- Discuss src/stories additions
+
+</Notes>
+
+
+---
+
+## Run It!
 
 `yarn storybook`
+
+<Notes>
+
+
+- yarn storybook
+- Show Button Primary
+  - Controls/Actions
+  - Docs
+- Show Header
+  - Show screen controls
+
+</Notes>
+
 
 ---
 
@@ -205,6 +213,35 @@ Secondary.args = { label: "Button" };
 </CodeSurfer>
 
 
+<Notes>
+
+
+- switch to 02-vueify
+- discuss layout change
+- Show Button component while going through story
+
+</Notes>
+
+
+---
+
+# Production Storybook Projects
+
+https://react.carbondesignsystem.com/?path=/story/accordion--accordion
+
+https://bbc.github.io/psammead
+
+https://storybook.js.org/docs/react/get-started/examples
+
+---
+
+# Stories Can Drive Other Tests
+
+- Unit
+- Snapshot
+- Visual Regression
+- End to End
+
 ---
 
 # Unit Tests
@@ -244,16 +281,6 @@ https://www.chromatic.com/choose/visual-testing
   size="contain"
   style={{ height: "60vw", margin: "0" }}
 ></Image>
-
----
-
-# Production Storybook Projects
-
-https://react.carbondesignsystem.com/?path=/story/accordion--accordion
-
-https://bbc.github.io/psammead
-
-https://storybook.js.org/docs/react/get-started/examples
 
 ---
 
